@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import {UserRegistrationService} from "../user-registration.service";
 import {User} from "../user";
+import {Observable} from "rxjs";
 
 
 @Component({
@@ -17,6 +18,9 @@ export class RegistrationComponent implements OnInit {
 
   isRegistered: boolean = false;
 
+  canRegister:boolean =false;
+
+
   toggleIsRegistered() {
     this.isRegistered = !this.isRegistered;
   }
@@ -26,9 +30,23 @@ export class RegistrationComponent implements OnInit {
   }
 
 
+  ngOnChanges(){
+    if(this.user.user_name && this.user.email && this.user.age && this.user.password && this.user.role &&
+      this.user.last_name && this.user.age) {
+      this.canRegister = true;
+    }
+    else{
+      this.canRegister=false;
+    }
+  }
   public registerNow(){
     let resp=this.service.doRegistration(this.user);
     resp.subscribe((data)=>this.message=data);
   }
 
+
+
 }
+
+
+
