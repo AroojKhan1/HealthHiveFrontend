@@ -1,0 +1,31 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+  --primary-color: #D98CA7;
+  --secondary-color: #BDB3E0;
+  --background-color: #D3C3E3;
+}
+body {
+  background-color: var(--background-color);
+}
+
+h1, h2, h3 {
+  color: var(--primary-color);
+}
+
+button {
+  background-color: var(--secondary-color);
+}
+
+
+/*Purple:*/
+/*#A89CCD (lavender)*/
+/*#BDB3E0 (pastel purple)*/
+/*#D3C3E3 (light lilac)*/
+/*#E6DDEA (pale violet)*/
+/*#F4ECF7 (light lavender)*/
+/*Pink:*/
+/*#FFC2D4 (pale pink)*/
+/*#F9B1C7 (soft rose)*/
+/*#F0A6BA (light magenta)*/
+/*#E899AD (dusty pink)*/
+/*#D98CA7 (light blush)*/

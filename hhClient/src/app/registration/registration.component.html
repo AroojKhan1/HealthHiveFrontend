@@ -1,0 +1,109 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<!--<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>-->
+Become a member of Health Hive now!
+<div style="text-align: center">
+  <h1>{{message}}</h1>
+</div>
+
+<html>
+<html>
+<head>
+  <title>Registration Form</title>
+  <style>
+    form {
+      width: 85%;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+<div>
+  <h1>{{message}}</h1>
+</div>
+<div class="container" >
+  <div class="row">
+    <div class="col-md-6">
+      <form>
+        <fieldset>
+
+
+          <div class="form-group">
+            <label for="username"><span class="req">* </span> Username: </label>
+            <input required type="text" [(ngModel)]="user.user_name" name="username" id="username"
+                   class="form-control" maxlength="28" placeholder="Enter your username..." required />
+          </div>
+
+          <div class="form-group">
+            <label for="firstname"><span class="req">* </span> First Name: </label>
+            <input required type="text" [(ngModel)]="user.first_name" name="firstname" id="firstname"
+                   class="form-control" maxlength="28" placeholder="Enter your first name..." />
+          </div>
+          <div class="form-group">
+            <label for="lastname">Last Name: </label>
+            <input  type="text" [(ngModel)]="user.last_name" name="lastname" id="lastname"
+                   class="form-control" maxlength="28" placeholder="Enter your last name..." />
+          </div>
+
+
+          <div class="form-group">
+            <label for="email"><span class="req">* </span> Email: </label>
+            <input required type="email" [(ngModel)]="user.email" name="email" id="email"
+                   class="form-control" placeholder="Enter your email..." />
+          </div>
+
+          <div class="form-group">
+            <label for="password"><span class="req">* </span> Password: </label>
+            <input required type="password" [(ngModel)]="user.password" name="password" id="password"
+                   class="form-control" placeholder="Enter your password..." />
+          </div>
+          <div class="form-group">
+            <label for="confirm_password"><span class="req">* </span> Confirm Password: </label>
+            <input required type="password" [(ngModel)]="confirmPassword" name="confirm_password" id="confirm_password" class="form-control" placeholder="Re-enter your password..." />
+            <div *ngIf="confirmPassword !== user.password" class="alert alert-danger">Passwords do not match.</div>
+          </div>
+
+
+          <div class="form-group">
+            <label for="age"><span class="req">* </span> Age: </label>
+            <input required type="number" [(ngModel)]="user.age" name="age" id="age"
+                   class="form-control" placeholder="Enter your age..." />
+          </div>
+          <div class="form-group">
+            <label for="role"><span class="req">* </span> Role: </label>
+            <select required [(ngModel)]="user.role" name="role" id="role" class="form-control">
+            <option value="" disabled selected>Select your role...</option>
+            <option value="doctor">Doctor</option>
+            <option value="Regular User">Regular User</option>
+
+            </select>
+
+          </div>
+
+          <div class="form-group">
+            <label for="gender"> Gender: </label>
+            <select required [(ngModel)]="user.gender" name="gender" id="gender" class="form-control">
+              <option value="" disabled selected>Select your gender...</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+
+            </select>
+          </div>
+
+          <div class="form-group">
+            <input class="btn btn-success" type="submit" [disabled]="confirmPassword !== user.password" name="submit_reg" value="Register" (click)="registerNow()" (click)="toggleIsRegistered()"Toggle isRegistered>
+
+          </div>
+
+          <div *ngIf="isRegistered">
+            <p>Congratulations! You have successfully registered. Click <a href="/login">here</a> to login.</p>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
