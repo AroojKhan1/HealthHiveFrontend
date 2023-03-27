@@ -1,15 +1,122 @@
-<!--<app-home></app-home>-->
-<header>
-  <h1>Welcome to Health Hive!</h1>
-</header>
-<main>
-  <p>This is the home page. Please choose one of the following:</p>
-  <ul>
-    <li><a routerLink="/todo">Your Todo List</a></li>
-    <li><a routerLink="/symptoms">Symptom Journal</a></li>
-    <li><a routerLink="/health">Health Tracker</a></li>
-    <li><a routerLink="/askDr">Ask a Doctor</a></li>
-    <li><a routerLink="/forum">Forum</a></li>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Health Hive</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" integrity="sha512-W1UCdbvyUHZv6eMWiv0KjRSkf+0o6P/+uT3f8+W7qDTuvy+l/TG7V9Xgj8TXdKyJzB6sLxGWUdC6YnYwUfaznQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+<body>
+<!--<nav class="navbar navbar-expand-lg navbar-light bg-light">-->
+<!--  <div class="container">-->
+<!--    <a class="navbar-brand" href="#">Health Hive</a>-->
+<!--    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">-->
+<!--      <span class="navbar-toggler-icon"></span>-->
+<!--    </button>-->
+<!--    <div class="collapse navbar-collapse" id="navbarNav">-->
+<!--      <ul class="navbar-nav ml-auto" style="list-style: none;">-->
 
-  </ul>
-</main>
+<!--          <a class="nav-link" href="#">Logout</a>-->
+
+<!--      </ul>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</nav>-->
+<div class="container my-4">
+  <div class="row">
+    <div class="col">
+      <h1>Welcome to Health Hive!</h1>
+    </div>
+  </div>
+  <div class="row mt-4">
+    <div class="col">
+      <div class="card">
+        <div class="card-header">
+          <i class="fas fa-list" style="margin-right: 8px;" ></i>
+          <a href="#" class="nav-link active" data-bs-toggle="tab" data-bs-target="#todo-tab">Your Todo List</a>
+        </div>
+        <div class="card-body" id="todo-tab">
+
+          <h2>Keep track of your daily tasks and responsibilities.</h2>
+
+
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+    <div class="col">
+      <div class="card">
+        <div class="card-header">
+          <i class="fas fa-journal-whills" style="margin-right: 8px;"></i>
+          <a href="#" class="nav-link" data-bs-toggle="tab" data-bs-target="#symptoms-tab">Symptom Journal</a>
+        </div>
+        <div class="card-body" id="symptoms-tab">
+          <h2>Record your symptoms and track your health over time.</h2>
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+    <div class ="col">
+      <div class="card">
+        <div class="card-header">
+          <i class="fas fa-chart-area" style="margin-right: 8px;" ></i>
+          <a href="#" class="nav-link" data-bs-toggle="tab" data-bs-target="#health-tab">Health Tracker</a>
+        </div>
+        <div class="card-body" id="health-tab">
+          <h2>Monitor your vital signs and track your progress towards your health goals.</h2>
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+    <div class="col">
+      <div class="card">
+        <div class="card-header">
+          <i class="fas fa-user-md" style="margin-right: 8px;"></i>
+          <a href="#" class="nav-link active" data-bs-toggle="tab" data-bs-target="#doctor-tab">Ask a Doctor</a>
+        </div>
+        <div class="card-body" id="doctor-tab">
+          <h2>Get medical advice and ask questions to qualified professionals.</h2>
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+    <div class="col">
+      <div class="card">
+        <div class="card-header">
+          <i class="fas fa-users" style="margin-right: 8px;"></i>
+
+          <a href="#" class="nav-link active" data-bs-toggle="tab" data-bs-target="#forum-tab">Forum</a>
+        </div>
+        <div class="card-body" id="forum-tab">
+          <h2>Connect with other users and share your experiences and insights.</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--//waves generated using https://getwaves.io/ :)-->
+<div class="wave-container">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" style="position: fixed; bottom: 0; left: 0; width: 100%; height: auto;">
+  <path fill="#f3f4f5" fill-opacity="0.5" d="M0,96L80,85.3C160,75,320,53,480,74.7C640,96,800,160,960,181.3C1120,203,1280,181,1360,170.7L1440,
+  160V320H1360C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320H0V96Z"></path>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" style="position: fixed; bottom: 0; left: 0; width: 100%; height: auto;">
+  <path fill="#f3f4f5" fill-opacity="0.5" d="M0,32L80,69.3C160,107,320,181,480,176C640,171,800,85,960,85.3C1120,85,1280,
+  171,1360,213.3L1440,256L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
+</svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" style="position: fixed; bottom: 0; left: 0; width: 100%; height: auto;">
+    <path fill="#f3f4f5" fill-opacity="0.5" d="M0,32L80,69.3C160,107,320,181,480,176C640,171,800,85,960,85.3C1120,85,1280,171,1360,213.3L1440,256L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
+  </svg>
+</div>
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js" integrity="sha512-0TfTfc/1KfeRpSQzGvPdyAhNQI3qC3bOlfml0cy/JZ/t6u4w4w4c/XFXY7VFcO9Yk/D7GDRmBLulZf7pZdrLjw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+</html>

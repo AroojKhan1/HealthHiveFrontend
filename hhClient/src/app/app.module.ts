@@ -24,7 +24,7 @@ import { ForumComponent } from './forum/forum.component';
     AppComponent,
     RegistrationComponent,
     // SearchDeleteComponent,
-    // HomeComponent,
+    HomeComponent,
     // TodoComponent,
     // SymptomsComponent,
     // HealthComponent,

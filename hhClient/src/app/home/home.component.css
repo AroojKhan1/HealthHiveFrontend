@@ -1,0 +1,34 @@
+
+
+/*body{*/
+/*  padding-right: 10%;*/
+/*}*/
+.navbar {
+  background-color: #d3eeb8;
+}
+
+.navbar-nav .nav-link {
+  font-size: 3rem !important;
+}
+
+.nav-link:hover {
+  background-color: #d3eeb8;
+}
+.nav-link.active {
+  font-weight: normal;
+}
+.card-body {
+  display: none;
+}
+.card:hover .card-body {
+  display: block;
+}
+
+/*body {*/
+/*  background-image: url("../../assets/imgs/logo-no-background.png");*/
+/*  background-repeat: no-repeat;*/
+/*  background-position: center;*/
+/*  background-size: cover;*/
+/*}*/
+
+
