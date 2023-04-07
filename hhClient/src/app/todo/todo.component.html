@@ -5,7 +5,6 @@
   <meta charset="UTF-8">
   <title>To-Do List</title>
 </head>
-<body>
 <h1>To-Do List</h1>
 <input type="text" placeholder="Add new task...">
 <button>Add</button>
@@ -14,5 +13,35 @@
   <li><input type="checkbox"><span>Task 2</span></li>
   <li><input type="checkbox"><span>Task 3</span></li>
 </ul>
-</body>
+
+<div class="container">
+  <div class="container">
+    <div class="row col-md-6 col-md-offset-2 custyle">
+      <table class="table table-striped custab">
+        <thead>
+
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>age</th>
+          <th>gender</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let todo of todos">
+
+          <td>{{todo.id}}</td>
+          <td>{{todo.completed}}</td>
+          <td>{{todo.item}}</td>
+          <td>{{todo.number}}</td>
+
+          <!--            <td class="text-center"><button class="btn btn-danger btn-xs" (click)="delteUser(user.id_user)"><span class="glyphicon glyphicon-remove"></span> Delete</button></td>-->
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
 </html>

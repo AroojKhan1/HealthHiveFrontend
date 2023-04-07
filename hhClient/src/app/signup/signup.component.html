@@ -1,0 +1,82 @@
+
+<h2>Sign up Now!</h2>
+<div>
+  <img src="../../assets/imgs/logo-no-background.png" alt="logo">
+</div>
+<div class="container" >
+<form [formGroup]="form" #AdminInformation (ngSubmit)="AdminForm(AdminInformation)">
+
+  <div class="form-group">
+    <div class=" col-md-offset-1 col-md-4">
+      <label for="user_name"><span class="req">* </span> Username </label>
+      <input formControlName="user_name" class="form-control" type="text" id="user_name" maxlength="28" placeholder="Must be unique...">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class=" col-md-offset-1 col-md-4">
+      <label for="first_name"> First name </label>
+      <input formControlName="first_name" class="form-control" type="text" id="first_name">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class=" col-md-offset-1 col-md-4">
+      <label for="last_name"> Last Name </label>
+      <input formControlName="last_name" class="form-control" type="text" id="last_name">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class=" col-md-offset-1 col-md-4">
+      <label for="email"> <span class="req">* </span>Email </label>
+      <input formControlName="email" class="form-control" type="text" id="email">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class=" col-md-offset-1 col-md-4">
+      <label for="password"><span class="req">* </span> Password </label>
+      <input formControlName="password" class="form-control" type="password" id="password">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class=" col-md-offset-1 col-md-4">
+      <label for="confirmPassword"><span class="req">* </span> Confirm Password </label>
+      <input formControlName="confirmPassword" class="form-control" type="password" id="confirmPassword">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class=" col-md-offset-1 col-md-4">
+      <label for="role"><span class="req">* </span> Role </label>
+      <input formControlName="role" class="form-control" type="text"  id="role">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class=" col-md-offset-1 col-md-4">
+      <label for="age"><span class="req">* </span> age </label>
+      <input formControlName="age" class="form-control" type="number"  id="age">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class=" col-md-offset-1 col-md-4">
+      <label for="gender"> gender </label>
+      <input formControlName="gender" class="form-control" type="text"  id="gender">
+    </div>
+  </div>
+
+  <div class="form-groupw" style="margin-top: 40px;">
+
+      <button class="btn btn-md btn-primary btn-style"  >Save</button>
+
+  </div>
+
+
+
+
+
+
+
+
+</form>
+</div>

@@ -15,7 +15,7 @@ h1, h2, h3 {
 button {
   background-color: var(--secondary-color);
 }
-
+@import "~bootstrap/dist/css/bootstrap.css";
 
 /*Purple:*/
 /*#A89CCD (lavender)*/

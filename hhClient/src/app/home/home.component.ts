@@ -8,18 +8,13 @@ import {ActivatedRoute, Router} from "@angular/router";
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  isLoggedIn = false;
 
-  // constructor(private route: ActivatedRoute,
-  //             private router: Router,
-  //             private authenticationService: AuthenticationService) { }
+  userId: string;
+
+  constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
-    // this.isLoggedIn = this.authenticationService.isUserLoggedIn();
-    // console.log('menu ->' + this.isLoggedIn);
+    this.userId = this.route.snapshot.params['id'];
   }
-  //
-  // handleLogout() {
-  //   this.authenticationService.logout();
-  // }
+
 }
