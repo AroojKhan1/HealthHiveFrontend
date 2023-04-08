@@ -22,6 +22,8 @@ import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
 import { SignupComponent } from './signup/signup.component';
 import {AdminService} from "./admin.service";
+import {UserIdService} from "./user-id.service";
+
 // import { LoginComponent } from './login/login.component';
 // import { LogoutComponent } from './logout/logout.component';
 // import {HttpInterceptorService} from "./http-interceptor.service";
@@ -66,10 +68,12 @@ import {AdminService} from "./admin.service";
         path : 'profile/:adminId',
         component : ProfileComponent
       }
+
     ])
 
+
 ],
-  providers: [UserRegistrationService, AdminService],
+  providers: [UserRegistrationService, AdminService,UserIdService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

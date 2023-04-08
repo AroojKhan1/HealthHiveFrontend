@@ -1,18 +1,51 @@
-<p>todo works!</p>
+<!--<p>todo works!</p>-->
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>To-Do List</title>
-</head>
-<h1>To-Do List</h1>
-<input type="text" placeholder="Add new task...">
-<button>Add</button>
-<ul>
-  <li><input type="checkbox"><span>Task 1</span></li>
-  <li><input type="checkbox"><span>Task 2</span></li>
-  <li><input type="checkbox"><span>Task 3</span></li>
-</ul>
+<!--<html lang="en">-->
+<!--<head>-->
+<!--  <meta charset="UTF-8">-->
+<!--  <title>To-Do List</title>-->
+<!--</head>-->
+<!--<h1>To-Do List</h1>-->
+<!--<input type="text" placeholder="Add new task..." [(ngModel)]="newTask">-->
+<!--<button (click)="newTask">Add</button>-->
+<!--<ul>-->
+<!--  <li><input type="checkbox"><span>Task 1</span></li>-->
+<!--  <li><input type="checkbox"><span>Task 2</span></li>-->
+<!--  <li><input type="checkbox"><span>Task 3</span></li>-->
+<!--</ul>-->
+
+<!--<div class="container">-->
+<!--  <div class="container">-->
+<!--    <div class="row col-md-6 col-md-offset-2 custyle">-->
+<!--      <table class="table table-striped custab">-->
+<!--        <thead>-->
+
+<!--        <tr>-->
+<!--          <th>Id</th>-->
+<!--          <th>Name</th>-->
+<!--          <th>Email</th>-->
+<!--          <th>age</th>-->
+<!--          <th>gender</th>-->
+
+<!--        </tr>-->
+<!--        </thead>-->
+<!--        <tbody>-->
+<!--        <tr *ngFor="let todo of todos">-->
+
+<!--          <td>{{todo.id}}</td>-->
+<!--          <td>{{todo.completed}}</td>-->
+<!--          <td>{{todo.item}}</td>-->
+<!--          <td>{{todo.number}}</td>-->
+
+<!--          &lt;!&ndash;            <td class="text-center"><button class="btn btn-danger btn-xs" (click)="delteUser(user.id_user)"><span class="glyphicon glyphicon-remove"></span> Delete</button></td>&ndash;&gt;-->
+<!--        </tr>-->
+<!--        </tbody>-->
+<!--      </table>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+<!--</html>-->
+
 
 <div class="container">
   <div class="container">
@@ -22,10 +55,10 @@
 
         <tr>
           <th>Id</th>
-          <th>Name</th>
-          <th>Email</th>
-          <th>age</th>
-          <th>gender</th>
+          <th>Task</th>
+          <th>Completed</th>
+          <th>UserId</th>
+
 
         </tr>
         </thead>
@@ -33,9 +66,12 @@
         <tr *ngFor="let todo of todos">
 
           <td>{{todo.id}}</td>
-          <td>{{todo.completed}}</td>
           <td>{{todo.item}}</td>
-          <td>{{todo.number}}</td>
+<!--          <td>{{todo.completed}}</td>-->
+          <td>
+            <input type="checkbox" [(ngModel)]="todo.completed" (change)="toggleTask(todo)">
+          </td>
+          <td>{{todo.user_id}}</td>
 
           <!--            <td class="text-center"><button class="btn btn-danger btn-xs" (click)="delteUser(user.id_user)"><span class="glyphicon glyphicon-remove"></span> Delete</button></td>-->
         </tr>
@@ -44,4 +80,21 @@
     </div>
   </div>
 </div>
-</html>
+<div>
+<form>
+  <fieldset>
+
+    <div class="form-group">
+      <label for="item"><span class="req">* </span> todo item: </label>
+      <input required type="text" [(ngModel)]="newTask.item" name="item" id="item"
+             class="form-control" maxlength="28" placeholder="add a todo..."  />
+
+      <input class="btn btn-success" type="submit" (click)="addTask(newTask.item)">
+    </div>
+
+  </fieldset>
+</form>
+  <div style="text-align: center">
+    <h1><strong>{{message}}</strong></h1>
+  </div>
+</div>

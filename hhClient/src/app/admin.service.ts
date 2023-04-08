@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import {HttpClient, HttpHeaders, HttpResponse} from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import {User} from "./user";
@@ -34,10 +34,11 @@ export class AdminService {
 
 }
 
-  login(adminDetail : User) : Observable<any>
+  login(adminDetail : User): Observable<HttpResponse<Object>>
   {
     let url = this.baseUrl + "login";
-    return this.http.post(url, adminDetail);
+    return this.http.post(url, adminDetail, {observe: "response",
+      responseType: "json"});
     // return this.http.post("http://localhost:8080/login",adminDetail,{responseType:'text' as 'json'})
   }
 
