@@ -12,6 +12,7 @@ import {HttpClient} from "@angular/common/http";
   styleUrls: ['./todo.component.css']
 })
 export class TodoComponent implements OnInit{
+
   newTask:ToDo = new ToDo(0,false,"",0)
   message:any;
   todos:any;
@@ -29,12 +30,9 @@ export class TodoComponent implements OnInit{
 
   ngOnInit() {
 
-    // this.currentUser = this.userIdService.currentUser;
-    // console.log('Current User:', this.currentUser);
-    // console.log('User ID:', this.userId);
-    // const userId = this.route.snapshot.paramMap.get('userId');
-    // let resp = this.service.getTodo(Number(userId));
-    let resp = this.service.getTodo();
+    this.userId = this.route.snapshot.params['id'];
+    console.log("user id: ",this.userId);
+    let resp = this.service.getTodo(Number(this.userId));
     resp.subscribe((data)=>this.todos=data)
 
   }

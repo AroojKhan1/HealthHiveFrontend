@@ -23,27 +23,23 @@ import { ProfileComponent } from './profile/profile.component';
 import { SignupComponent } from './signup/signup.component';
 import {AdminService} from "./admin.service";
 import {UserIdService} from "./user-id.service";
-
-// import { LoginComponent } from './login/login.component';
-// import { LogoutComponent } from './logout/logout.component';
-// import {HttpInterceptorService} from "./http-interceptor.service";
+import {SymptomService} from "./symptom.service";
 
 @NgModule({
   declarations: [
     AppComponent,
     RegistrationComponent,
-    // SearchDeleteComponent,
     HomeComponent,
     TodoComponent,
     LoginComponent,
     ProfileComponent,
     SignupComponent,
-    // SymptomsComponent,
+    SymptomsComponent,
+
     // HealthComponent,
     // AskDrComponent,
     // ForumComponent,
-    // LoginComponent,
-    // LogoutComponent
+
   ],
   imports: [
     BrowserModule,
@@ -67,13 +63,18 @@ import {UserIdService} from "./user-id.service";
       {
         path : 'profile/:adminId',
         component : ProfileComponent
+      },
+
+      {
+        path : 'addSymptom',
+        component : SymptomsComponent
       }
 
     ])
 
 
 ],
-  providers: [UserRegistrationService, AdminService,UserIdService],
+  providers: [UserRegistrationService, AdminService,UserIdService,SymptomService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
