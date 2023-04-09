@@ -15,7 +15,8 @@ export class SymptomService {
   constructor(private http:HttpClient) { }
 
   public addSymptom(symptom:SymptomJournal){
-    return this.http.post("http://localhost:8080/addSymptom",symptom,{responseType:'text' as 'json'})
+    return this.http.post("http://localhost:8080/addSymptom",
+      symptom,{responseType:'text' as 'json'})
   }
 
   public getSymp():Observable<SymptomJournal[]>{

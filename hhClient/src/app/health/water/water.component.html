@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Water Intake</title>
+</head>
+<body>
+
+<style>
+  .centered-table {
+    margin: 0 auto;
+  }
+</style>
+
+<h1>Record your daily water intake</h1>
+
+<p class="small-text">Track your water intake</p>
+<div class="row col-md-6 col-md-offset-2 custyle centered-table">
+  <table class="table table-striped custab">
+    <thead>
+    <tr>
+      <th>Id</th>
+      <th>Number of Glasses</th>
+      <th>Date</th>
+      <th>Time</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let water of wtr">
+
+      <td>{{water.id}}</td>
+      <td>{{water.num_glasses}}</td>
+      <td>{{water.water_date | date:'dd/MM/yyyy'}}</td>
+<!--      <td>{{water.water_time.toString().split(',').join(':')}}</td>-->
+      <td>{{ water.water_time ? water.water_time.toString().split(',').join(':') : '-' }}</td>
+
+    </tr>
+
+    </tbody>
+  </table>
+</div>
+<div class="container">
+  <form>
+  <textarea id = glasses name ="glasses" [(ngModel)]="water.num_glasses"
+            class="form-control" placeholder="Enter num glasses here"
+            style="height: 30%; width: 30%;"></textarea>
+    <div class="form-group">
+      <input class="btn btn-success" type="submit" name="submit_wtr"
+             value="record glass(es)" (click)="addWater()">
+    </div>
+  </form>
+  <div style="text-align: center">
+    <h1><strong>{{message}}</strong></h1>
+  </div>
+</div>
+
+
+</body>
+</html>

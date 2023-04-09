@@ -24,6 +24,10 @@ import { SignupComponent } from './signup/signup.component';
 import {AdminService} from "./admin.service";
 import {UserIdService} from "./user-id.service";
 import {SymptomService} from "./symptom.service";
+import { WaterComponent } from './health/water/water.component';
+import { WorkoutComponent } from './health/workout/workout.component';
+import { CalorieComponent } from './health/calorie/calorie.component';
+import {WaterService} from "./water.service";
 
 @NgModule({
   declarations: [
@@ -36,6 +40,9 @@ import {SymptomService} from "./symptom.service";
     SignupComponent,
     SymptomsComponent,
     HealthComponent,
+    WaterComponent,
+    WorkoutComponent,
+    CalorieComponent,
     // AskDrComponent,
     // ForumComponent,
 
@@ -70,14 +77,18 @@ import {SymptomService} from "./symptom.service";
       },
       {
         path : 'health',
-        component : SymptomsComponent
+        component : HealthComponent
+      },
+      {
+        path : 'water',
+        component : WaterComponent
       }
 
     ])
 
 
 ],
-  providers: [UserRegistrationService, AdminService,UserIdService,SymptomService],
+  providers: [UserRegistrationService, AdminService,UserIdService,SymptomService,WaterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
