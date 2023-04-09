@@ -7,6 +7,7 @@ import {SymptomsComponent} from "./symptoms/symptoms.component";
 
 import {HomeComponent} from "./home/home.component";
 import {LoginComponent} from "./login/login.component";
+import {HealthComponent} from "./health/health.component";
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -16,7 +17,7 @@ const routes: Routes = [
   { path: "yourTodos", component: TodoComponent },
   { path: 'addSymptom', component: SymptomsComponent },
   { path: 'symptoms', component: SymptomsComponent },
-  // { path: 'health', component: HealthComponent },
+  { path: 'health', component: HealthComponent },
   // { path: 'askDr', component: AskDrComponent },
 
   {path:"",redirectTo:"login",pathMatch:"full"},

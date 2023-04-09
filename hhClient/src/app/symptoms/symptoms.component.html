@@ -4,10 +4,45 @@
   <title>Symptom Journal</title>
 </head>
 <body>
+
+<style>
+  .centered-table {
+    margin: 0 auto;
+  }
+</style>
 <h1>Symptom Journal</h1>
-<p track your symptoms></p>
+<p class="small-text">Track your symptoms</p>
+<div class="row col-md-6 col-md-offset-2 custyle centered-table">
+  <table class="table table-striped custab">
+    <thead>
+
+    <tr>
+      <th>Id</th>
+      <th>Symptom</th>
+      <th>date</th>
+      <th>time</th>
+
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let symptom of symptoms">
+
+      <td>{{symptom.id}}</td>
+      <td>{{symptom.symptoms}}</td>
+      <td>{{symptom.symptom_date |  date:'dd/MM/yyyy'}}</td>
+      <td>{{symptom.time.toString().split(',').join(':')}}</td>
+
+      <!--            <td class="text-center"><button class="btn btn-danger btn-xs" (click)="delteUser(user.id_user)"><span class="glyphicon glyphicon-remove"></span> Delete</button></td>-->
+    </tr>
+    </tbody>
+  </table>
+</div>
+<div class="container">
 <form>
-  <textarea id = symptoms name ="symptoms" [(ngModel)]="symptom.symptoms" class="form-control" placeholder="Enter your symptoms here"></textarea>
+  <textarea id = symptoms name ="symptoms" [(ngModel)]="symptom.symptoms"
+            class="form-control" placeholder="Enter your symptoms here"
+            style="height: 30%; width: 30%;"></textarea>
   <div class="form-group">
     <input class="btn btn-success" type="submit" name="submit_symp"
            value="record symptoms" (click)="addNow()">
@@ -16,34 +51,10 @@
 <div style="text-align: center">
   <h1><strong>{{message}}</strong></h1>
 </div>
+</div>
 
 
-    <div class="row col-md-6 col-md-offset-2 custyle">
-      <table class="table table-striped custab">
-        <thead>
 
-        <tr>
-          <th>Id</th>
-          <th>Symptom</th>
-          <th>date</th>
-          <th>time</th>
-
-
-        </tr>
-        </thead>
-        <tbody>
-        <tr *ngFor="let symptom of symptoms">
-
-          <td>{{symptom.id}}</td>
-          <td>{{symptom.symptoms}}</td>
-          <td>{{symptom.symptom_date |  date:'dd/MM/yyyy'}}</td>
-          <td>{{symptom.time.toString().split(',').join(':')}}</td>
-
-          <!--            <td class="text-center"><button class="btn btn-danger btn-xs" (click)="delteUser(user.id_user)"><span class="glyphicon glyphicon-remove"></span> Delete</button></td>-->
-        </tr>
-        </tbody>
-      </table>
-    </div>
 
 </body>
 </html>

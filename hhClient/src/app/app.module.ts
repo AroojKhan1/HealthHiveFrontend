@@ -35,8 +35,7 @@ import {SymptomService} from "./symptom.service";
     ProfileComponent,
     SignupComponent,
     SymptomsComponent,
-
-    // HealthComponent,
+    HealthComponent,
     // AskDrComponent,
     // ForumComponent,
 
@@ -67,6 +66,10 @@ import {SymptomService} from "./symptom.service";
 
       {
         path : 'addSymptom',
+        component : SymptomsComponent
+      },
+      {
+        path : 'health',
         component : SymptomsComponent
       }
 
