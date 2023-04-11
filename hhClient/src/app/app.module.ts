@@ -28,6 +28,7 @@ import { WorkoutComponent } from './health/workout/workout.component';
 import { CalorieComponent } from './health/calorie/calorie.component';
 import {WaterService} from "./water.service";
 import {CalorieService} from "./calorie.service";
+import {WorkoutService} from "./workout.service";
 
 @NgModule({
   declarations: [
@@ -90,13 +91,22 @@ import {CalorieService} from "./calorie.service";
       {
         path : 'getAllcalorie',
         component : CalorieComponent
+      },
+
+      {
+        path : 'getAllworkouts',
+        component : WorkoutComponent
+      },
+      {
+        path : 'workout',
+        component : WorkoutComponent
       }
 
     ])
 
 
 ],
-  providers: [UserRegistrationService, AdminService,UserIdService,SymptomService,WaterService,CalorieService],
+  providers: [UserRegistrationService, AdminService,UserIdService,SymptomService,WaterService,CalorieService, WorkoutService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,61 @@
+td {
+  text-align: center;
+  padding: 12px 15px;
+}
+table{
+
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+th{
+  background-color: #A89AD5;
+  padding: 12px 15px;
+  text-align: center;
+}
+/*tbody*/
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h1{
+  text-align: center;
+}
+p{
+  text-align: center;
+}
+
+form{
+  text-align: center;
+}
+textarea {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.btn {
+  padding: 5px 11px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  border-radius: 4px;
+
+  margin-left: 10px; /* adjust the value to increase or decrease the space */
+
+}
+
+
+body {
+  background: linear-gradient(to bottom, #f1f1f1 0%, #D3C3E3 100%) !important;
+  animation: gradient 10s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}

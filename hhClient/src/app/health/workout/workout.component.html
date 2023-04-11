@@ -1,1 +1,99 @@
 <p>workout works!</p>
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>Water Intake</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-FnC/Y8nHYMm6UoT6TzMy1XJ8/8WlD+BSrNaJj+PZO95QwnGc3qzqbBLITgNf9z9l0f6JtrOfs+Z/u2dIgjUW8g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+</head>
+<body>
+
+<style>
+  .centered-table {
+    margin: 0 auto;
+  }
+</style>
+
+<h1>Record your daily workouts</h1>
+
+<p class="small-text">Track your workouts</p>
+
+<form action="/workout" method="get">
+  <!--  <input type="text" name="q" placeholder="Search...">-->
+
+  <input required type="text" [(ngModel)]="workout.w_date" name="date" id="date"
+         maxlength="28" placeholder="search (yyyy-mm-dd).."  />
+  <input class="btn btn-success" type="submit" name="submit_wtr"
+         value="search" (click)="getWorkoutByDate()">
+</form>
+
+<br>
+<div class="row col-md-6 col-md-offset-2 custyle centered-table">
+  <table class="table table-striped custab">
+    <thead>
+    <tr>
+      <th>Id</th>
+      <th>Calories</th>
+      <th>Date</th>
+      <th>name</th>
+      <th>reps</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let workouts of wkt">
+
+      <td>{{workouts.id}}</td>
+      <td>{{workouts.cal_burnt}}</td>
+      <td>{{workouts.w_date | date:'yyyy/MM/dd'}}</td>
+      <td>{{ workouts.w_name}}</td>
+      <td>{{ workouts.reps}}</td>
+    </tr>
+
+    </tbody>
+  </table>
+</div>
+<br>
+<br>
+
+
+<h1><strong>Record a Workout</strong></h1>
+<div class="container">
+  <form>
+    <div class="form-group">
+      <label for="w_name"><span class="req"> </span>w_name: </label>
+      <input required type="text" [(ngModel)]="workout.w_name" name="w_name" id="w_name" class="form-control"
+             maxlength="28" placeholder="Add calorie count.."/>
+
+    </div>
+
+    <div class="form-group">
+      <label for="cal_burnt"><span class="req"></span> cal_burnt: </label>
+      <input required type="text" [(ngModel)]="workout.cal_burnt" name="cal_burnt" id="cal_burnt"
+             class="form-control" maxlength="28" placeholder="Add calorie cal_burnt.."  />
+    </div>
+    <div class="form-group">
+      <label for="reps"><span class="req"></span> reps: </label>
+      <input required type="text" [(ngModel)]="workout.reps" name="reps" id="reps"
+             class="form-control" maxlength="28" placeholder="Add  reps.."  />
+    </div>
+    <br>
+    <br>
+    <div class="form-group">
+      <input class="btn btn-success" type="submit" name="submit_wtr"
+             value="record meal" (click)="addWorkout()">
+    </div>
+  </form>
+  <br>
+  <br>
+  <div style="text-align: center">
+    <h1><strong>{{message}}</strong></h1>
+  </div>
+</div>
+
+
+
+</body>
+</html>
