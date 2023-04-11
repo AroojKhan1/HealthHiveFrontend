@@ -1,36 +1,58 @@
-<p>health works!</p>
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Daily Health</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-QFv0vH8WJzO7+FrQEgYFdOJtUb8DpIUC7VZ32+OeJ7vSySiM+Txc+lPw+YtK2Gdw+shIWtsmMTX9fDifm6aFVw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!--  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" integrity="sha512-W1UCdbvyUHZv6eMWiv0KjRSkf+0o6P/+uT3f8+W7qDTuvy+l/TG7V9Xgj8TXdKyJzB6sLxGWUdC6YnYwUfaznQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 </head>
 <body>
-<div>
-<h1>record water intake</h1>
 
-      <div class="card-header">
-        <i class="fas fa-water  " style="margin-right: 8px;" ></i>
-        <a href="/water" class="nav-link" data-bs-toggle="tab" data-bs-target="#health-tab">Water intake</a>
+<div class="container my-4">
+  <div class="row">
+    <div class="col">
+      <h1>Track your daily Health!</h1>
+    </div>
+  </div>
+  <div class="row mt-4">
+    <div class="col">
+      <div class="card">
+        <div class="card-header">
+          <i class="fas fa-tint" style="margin-right: 8px;" ></i>
+          <a href="/water" class="nav-link active" data-bs-toggle="tab"
+             data-bs-target="#water-tab">Record your Water Intake</a>
+        </div>
+        <div class="card-body" id="water-tab">
+          <p>Keep track of your daily water intake.</p>
+        </div>
       </div>
-      <div class="card-body" id="health-tab">
+    </div>
+    <br>
+    <br>
+    <div class="row mt-4">
+      <div class="col">
+        <div class="card">
+          <div class="card-header">
+            <i class="fas fas fa-fire" style="margin-right: 8px;" ></i>
+            <a href="/calorie" class="nav-link active" data-bs-toggle="tab"
+               data-bs-target="#calorie-tab">Record your Calorie Intake</a>
+          </div>
+          <div class="card-body" id="calorie-tab">
+            <p>Keep track of your daily calorie intake.</p>
+          </div>
+        </div>
       </div>
+
+      </div>
+    </div>
 
 </div>
 
 
 
-<h1>
-  record calorie
-</h1>
-
-
-<h1>
-  record workouts
-  add workouts
-</h1>
-
-
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js" integrity="sha512-0TfTfc/1KfeRpSQzGvPdyAhNQI3qC3bOlfml0cy/JZ/t6u4w4w4c/XFXY7VFcO9Yk/D7GDRmBLulZf7pZdrLjw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
+</html>
+
+
+

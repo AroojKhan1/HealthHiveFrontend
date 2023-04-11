@@ -9,7 +9,6 @@ import { AppComponent } from './app.component';
 
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import { RegistrationComponent } from './registration/registration.component';
-import { SearchDeleteComponent } from './search-delete/search-delete.component';
 import {UserRegistrationService} from "./user-registration.service";
 import {FormsModule} from "@angular/forms";
 import { HomeComponent } from './home/home.component';
@@ -28,6 +27,7 @@ import { WaterComponent } from './health/water/water.component';
 import { WorkoutComponent } from './health/workout/workout.component';
 import { CalorieComponent } from './health/calorie/calorie.component';
 import {WaterService} from "./water.service";
+import {CalorieService} from "./calorie.service";
 
 @NgModule({
   declarations: [
@@ -82,13 +82,21 @@ import {WaterService} from "./water.service";
       {
         path : 'water',
         component : WaterComponent
+      },
+      {
+        path : 'calorie',
+        component : CalorieComponent
+      },
+      {
+        path : 'getAllcalorie',
+        component : CalorieComponent
       }
 
     ])
 
 
 ],
-  providers: [UserRegistrationService, AdminService,UserIdService,SymptomService,WaterService],
+  providers: [UserRegistrationService, AdminService,UserIdService,SymptomService,WaterService,CalorieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

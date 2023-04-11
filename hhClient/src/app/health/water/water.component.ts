@@ -21,7 +21,7 @@ export class WaterComponent {
 
   public addWater(){
     let resp=this.service.addWater(this.water);
-    resp.subscribe((data)=>this.message);
+    resp.subscribe((data)=>{this.message=data});
   }
 
 }

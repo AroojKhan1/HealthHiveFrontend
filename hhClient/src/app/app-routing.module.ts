@@ -8,20 +8,25 @@ import {SymptomsComponent} from "./symptoms/symptoms.component";
 import {HomeComponent} from "./home/home.component";
 import {LoginComponent} from "./login/login.component";
 import {HealthComponent} from "./health/health.component";
+import {WaterComponent} from "./health/water/water.component";
+import {CalorieComponent} from "./health/calorie/calorie.component";
 
 const routes: Routes = [
+  {path:"",redirectTo:"login",pathMatch:"full"},
+  {path:"register",component:RegistrationComponent},
   {path: 'login', component: LoginComponent},
-
   {path: 'logout', component: LoginComponent},
   {path:"home/:id",component: HomeComponent},
   { path: "yourTodos", component: TodoComponent },
   { path: 'addSymptom', component: SymptomsComponent },
   { path: 'symptoms', component: SymptomsComponent },
   { path: 'health', component: HealthComponent },
+  { path: 'water', component: WaterComponent },
+  { path: 'calorie', component: CalorieComponent },
+  { path: 'getAllcalorie', component: CalorieComponent },
   // { path: 'askDr', component: AskDrComponent },
 
-  {path:"",redirectTo:"login",pathMatch:"full"},
-  {path:"register",component:RegistrationComponent},
+
 
 
 ];

@@ -31,7 +31,6 @@
       <td>{{water.id}}</td>
       <td>{{water.num_glasses}}</td>
       <td>{{water.water_date | date:'dd/MM/yyyy'}}</td>
-<!--      <td>{{water.water_time.toString().split(',').join(':')}}</td>-->
       <td>{{ water.water_time ? water.water_time.toString().split(',').join(':') : '-' }}</td>
 
     </tr>
@@ -53,6 +52,7 @@
     <h1><strong>{{message}}</strong></h1>
   </div>
 </div>
+
 
 
 </body>
