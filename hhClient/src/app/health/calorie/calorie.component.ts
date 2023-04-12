@@ -25,6 +25,7 @@ export class CalorieComponent {
 
   public getCalOnDate(){
     console.log(this.calorie.meal_date.toLocaleString(""));
+
     let resp = this.service.getCalorieOnDay(this.calorie.meal_date.toLocaleString(""));
     resp.subscribe((data)=>this.clr=data)
   }

@@ -21,7 +21,6 @@
 <p class="small-text">Track your workouts</p>
 
 <form action="/workout" method="get">
-  <!--  <input type="text" name="q" placeholder="Search...">-->
 
   <input required type="text" [(ngModel)]="workout.w_date" name="date" id="date"
          maxlength="28" placeholder="search (yyyy-mm-dd).."  />
@@ -63,21 +62,21 @@
 <div class="container">
   <form>
     <div class="form-group">
-      <label for="w_name"><span class="req"> </span>w_name: </label>
+      <label for="w_name"><span class="req"> </span>Workout Name: </label>
       <input required type="text" [(ngModel)]="workout.w_name" name="w_name" id="w_name" class="form-control"
-             maxlength="28" placeholder="Add calorie count.."/>
+             maxlength="28" placeholder="Jogging.."/>
 
     </div>
 
     <div class="form-group">
       <label for="cal_burnt"><span class="req"></span> cal_burnt: </label>
       <input required type="text" [(ngModel)]="workout.cal_burnt" name="cal_burnt" id="cal_burnt"
-             class="form-control" maxlength="28" placeholder="Add calorie cal_burnt.."  />
+             class="form-control" maxlength="28" placeholder="300.."  />
     </div>
     <div class="form-group">
-      <label for="reps"><span class="req"></span> reps: </label>
+      <label for="reps"><span class="req"></span> Reps or time: </label>
       <input required type="text" [(ngModel)]="workout.reps" name="reps" id="reps"
-             class="form-control" maxlength="28" placeholder="Add  reps.."  />
+             class="form-control" maxlength="28" placeholder="1 hr.."  />
     </div>
     <br>
     <br>

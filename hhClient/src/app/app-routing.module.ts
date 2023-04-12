@@ -11,6 +11,8 @@ import {HealthComponent} from "./health/health.component";
 import {WaterComponent} from "./health/water/water.component";
 import {CalorieComponent} from "./health/calorie/calorie.component";
 import {WorkoutComponent} from "./health/workout/workout.component";
+import {AskDrComponent} from "./ask-dr/ask-dr.component";
+import {DoctorHomeComponent} from "./doctor-home/doctor-home.component";
 
 const routes: Routes = [
   {path:"",redirectTo:"login",pathMatch:"full"},
@@ -27,7 +29,8 @@ const routes: Routes = [
   { path: 'getAllcalorie', component: CalorieComponent },
   { path: 'workout', component: WorkoutComponent },
   { path: 'getAllworkouts', component: WorkoutComponent },
-  // { path: 'askDr', component: AskDrComponent },
+  { path: 'askDr', component: AskDrComponent },
+  { path: 'drHome', component: DoctorHomeComponent},
 
 
 

@@ -29,6 +29,7 @@ import { CalorieComponent } from './health/calorie/calorie.component';
 import {WaterService} from "./water.service";
 import {CalorieService} from "./calorie.service";
 import {WorkoutService} from "./workout.service";
+import { DoctorHomeComponent } from './doctor-home/doctor-home.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import {WorkoutService} from "./workout.service";
     WaterComponent,
     WorkoutComponent,
     CalorieComponent,
-    // AskDrComponent,
+    AskDrComponent,
+    DoctorHomeComponent,
     // ForumComponent,
 
   ],
@@ -100,7 +102,17 @@ import {WorkoutService} from "./workout.service";
       {
         path : 'workout',
         component : WorkoutComponent
+      },
+      {
+        path : 'askDr',
+        component : AskDrComponent
+      },
+      {
+        path : 'drHome',
+        component : DoctorHomeComponent
       }
+
+
 
     ])
 

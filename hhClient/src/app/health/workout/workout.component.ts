@@ -9,6 +9,8 @@ import {Workout} from "../../Workout";
   templateUrl: './workout.component.html',
   styleUrls: ['./workout.component.css']
 })
+
+//search feature needs fixing doesnt display data
 export class WorkoutComponent {
   constructor(private service:WorkoutService) {
   }
@@ -27,7 +29,9 @@ export class WorkoutComponent {
   }
   public getWorkoutByDate(){
     console.log(this.workout.w_date.toLocaleString(""));
+    console.log("here");
     let resp = this.service.getWorkoutByDate(this.workout.w_date.toLocaleString(""));
+    console.log("data:", this.wkt)
     resp.subscribe((data)=>this.wkt=data)
   }
 }
