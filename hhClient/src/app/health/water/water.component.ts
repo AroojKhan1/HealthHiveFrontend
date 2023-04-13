@@ -13,13 +13,18 @@ export class WaterComponent {
   water = new Water(0,0,0,new Date(), new Date())
   wtr:any;
   message:any;
+  userId:number;
   ngOnInit():void{
-
-    let resp = this.service.getWaterData();
+    const id = localStorage.getItem('id');
+    this.userId = id? +id : 0;
+    console.log("user id wtr:",this.userId);
+    let resp = this.service.getWaterData(this.userId);
     resp.subscribe((data)=>this.wtr=data)
   }
 
   public addWater(){
+    const id = localStorage.getItem('id');
+    this.water.user = id? +id : 0;
     let resp=this.service.addWater(this.water);
     resp.subscribe((data)=>{this.message=data});
   }

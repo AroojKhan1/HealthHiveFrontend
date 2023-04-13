@@ -14,8 +14,11 @@ export class WaterService {
     return this.http.post("http://localhost:8080/water",
       water,{responseType:'text' as 'json'})
 
+  // }
+  // public getWaterData():Observable<Water[]>{
+  //   return this.http.get<Water[]>(`http://localhost:8080/water`);
   }
-  public getWaterData():Observable<Water[]>{
-    return this.http.get<Water[]>(`http://localhost:8080/water`);
+  public getWaterData(userId:number):Observable<Water[]>{
+    return this.http.get<Water[]>(`http://localhost:8080/water/${userId}`);
   }
 }

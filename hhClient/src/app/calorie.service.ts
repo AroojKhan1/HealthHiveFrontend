@@ -16,14 +16,14 @@ export class CalorieService {
       calorie,{responseType:'text' as 'json'})
 
   }
-  public getCalorie():Observable<Calorie[]>{
-    return this.http.get<Calorie[]>(`http://localhost:8080/getAllcalorie`);
+  public getCalorie(userId:number):Observable<Calorie[]>{
+    return this.http.get<Calorie[]>(`http://localhost:8080/getAllcalorie/${userId}`);
   }
 
-  public getCalorieOnDay(meal_date:String):Observable<Calorie[]>{
+  public getCalorieOnDay(meal_date:String,userId:number):Observable<Calorie[]>{
 
     console.log("meal date: ",meal_date)
 
-    return this.http.get<Calorie[]>(`http://localhost:8080/calorie?date=${meal_date}`);
+    return this.http.get<Calorie[]>(`http://localhost:8080/calorie/${userId}?date=${meal_date}`);
   }
 }

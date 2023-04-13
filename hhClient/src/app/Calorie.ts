@@ -3,13 +3,13 @@ export class Calorie{
   meal_typ:string;
   calorie:number;
   meal_date:Date;
-  userId:number;
+  user:number;
   constructor(
     id:number,
     meal_typ:string,
     calorie:number,
     meal_date:Date,
-    userId:number,
+    user:number,
   ){
 
   }

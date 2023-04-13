@@ -3,14 +3,14 @@ export class Workout{
 cal_burnt:number;
 w_date:Date;
 w_name:string;
-  userId:number;
+  user:number;
   reps:string
   constructor(
     id:number,
   cal_burnt:number,
   w_date:Date,
   w_name:string,
-  userId:number,
+  user:number,
   reps:string
   ){
 

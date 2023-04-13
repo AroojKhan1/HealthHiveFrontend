@@ -17,14 +17,14 @@ export class WorkoutService {
       workout, {responseType: 'text' as 'json'})
   }
 
-  public getWorkouts():Observable<Workout[]>{
-    return this.http.get<Workout[]>(`http://localhost:8080/getAllworkouts`);
+  public getWorkouts(userId:number):Observable<Workout[]>{
+    return this.http.get<Workout[]>(`http://localhost:8080/getAllworkouts/${userId}`);
   }
 
-  public getWorkoutByDate(w_date:String):Observable<Workout[]>{
+  public getWorkoutByDate(w_date:String,userId:number):Observable<Workout[]>{
 
     console.log("w date: ",w_date)
 
-    return this.http.get<Workout[]>(`http://localhost:8080/calorie?date=${w_date}`);
+    return this.http.get<Workout[]>(`http://localhost:8080/workout/${userId}?date=${w_date}`);
   }
 }
