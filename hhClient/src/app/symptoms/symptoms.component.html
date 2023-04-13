@@ -38,18 +38,20 @@
     </tbody>
   </table>
 </div>
+<br>
 <div class="container">
 <form>
   <textarea id = symptoms name ="symptoms" [(ngModel)]="symptom.symptoms"
             class="form-control" placeholder="Enter your symptoms here"
             style="height: 30%; width: 30%;"></textarea>
+  <br>
   <div class="form-group">
     <input class="btn btn-success" type="submit" name="submit_symp"
            value="record symptoms" (click)="addNow()">
   </div>
 </form>
 <div style="text-align: center">
-  <h1><strong>{{message}}</strong></h1>
+  <p>{{message}}</p>
 </div>
 </div>
 

@@ -19,7 +19,7 @@ export class TodoComponent implements OnInit{
   tasks:ToDo[];
   currentUser: any;
 
-  userId: string;
+  userId: number;
   constructor(private service:TodoService,
               // private userIdService:UserIdService,
               private route:ActivatedRoute,
@@ -30,15 +30,20 @@ export class TodoComponent implements OnInit{
 
   ngOnInit() {
 
-    this.userId = this.route.snapshot.params['id'];
-    console.log("user id: ",this.userId);
-    let resp = this.service.getTodo(Number(this.userId));
+
+    const id = localStorage.getItem('id');
+    this.userId = id? +id : 0;
+    console.log("user id:",this.userId);
+    let resp = this.service.getTodo(this.userId);
     resp.subscribe((data)=>this.todos=data)
 
   }
 
   addTask(item:string){
-    // this.newTask.completed=false;
+    this.newTask.completed=false;
+    const id = localStorage.getItem('id');
+    this.newTask.user = id? +id : 0;
+    console.log("new task:",this.newTask);
     let resp=this.service.addTodo(this.newTask);
     resp.subscribe((data)=>this.message=data);
 
@@ -46,11 +51,15 @@ export class TodoComponent implements OnInit{
 
 }
 
-//not working to be fixed
+//works now but once set to true cant change it back :( try fixing that
   toggleTask(task:ToDo){
     console.log('toggleTask called');
-    task.completed = !task.completed;
+    task.completed = true;
     this.service.updateTodoStatus(task).subscribe();
+  }
+
+  isTaskCompleted(todo: ToDo): boolean {
+    return todo.completed;
   }
 
 

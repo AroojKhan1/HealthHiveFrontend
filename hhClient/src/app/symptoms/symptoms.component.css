@@ -7,7 +7,7 @@ table{
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 th{
-  background-color: #A89AD5;
+  background-color: #d3eeb8;
   padding: 12px 15px;
   text-align: center;
 }
@@ -24,6 +24,9 @@ p{
   text-align: center;
 }
 
+.form-control {
+  background-color: #d3eeb8;
+}
 form{
   text-align: center;
 }
@@ -41,7 +44,7 @@ textarea {
 
 
 body {
-  background: linear-gradient(to bottom, #f1f1f1 0%, #A89AD5 100%) !important;
+  background: linear-gradient(to bottom, #f1f1f1 0%, #D3C3E3 100%) !important;
   animation: gradient 10s ease infinite;
 }
 

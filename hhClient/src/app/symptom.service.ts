@@ -19,7 +19,7 @@ export class SymptomService {
       symptom,{responseType:'text' as 'json'})
   }
 
-  public getSymp():Observable<SymptomJournal[]>{
-    return this.http.get<SymptomJournal[]>(`http://localhost:8080/symptoms`);
+  public getSymp(userId:number):Observable<SymptomJournal[]>{
+    return this.http.get<SymptomJournal[]>(`http://localhost:8080/symptoms/${userId}`);
   }
 }

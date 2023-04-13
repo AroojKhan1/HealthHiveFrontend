@@ -14,27 +14,33 @@ import {SymptomJournal} from "../SymptomJournal";
 })
 export class SymptomsComponent implements OnInit{
 
-  private adminDetail = new User(0,"","","","",0,"","","");
-
-  constructor(private service:SymptomService,private adminService : AdminService, private router : Router, private userIdService:UserIdService) { }
+  constructor(private service:SymptomService) { }
 
   symptom = new SymptomJournal(0,new Date(),new Date(),"",0);
   symptoms:any;
   message:any;
+  userId:number;
 
   ngOnInit(): void {
-    // if((this.adminService.isLoggedIn()) )
-    // {
-    //   this.router.navigate(['/addSymptom' , localStorage.getItem('id')]);
-    // } else
-    // {
-    //   this.router.navigate(['/login']);
-    // }
-    let resp = this.service.getSymp();
+
+    const id = localStorage.getItem('id');
+    this.userId = id? +id : 0;
+    console.log("user id sj:",this.userId);
+    let resp = this.service.getSymp(this.userId);
     resp.subscribe((data)=>this.symptoms=data)
+
+    // const id = localStorage.getItem('id');
+    // this.userId = id? +id : 0;
+    // console.log("user id sj:",this.userId);
+    // let resp = this.service.getSymp(this.userId);
+    console.log("sympltoms:",this.symptoms)
+    // resp.subscribe((data)=>this.symptoms=data)
   }
 
   public addNow(){
+
+    const id = localStorage.getItem('id');
+    this.symptom.user = id? +id : 0;
     let resp=this.service.addSymptom(this.symptom);
     resp.subscribe((data)=>this.message=data);
   }

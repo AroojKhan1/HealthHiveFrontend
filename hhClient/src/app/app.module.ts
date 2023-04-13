@@ -69,10 +69,6 @@ import { DoctorHomeComponent } from './doctor-home/doctor-home.component';
         path : 'register',
         component : RegistrationComponent
       },
-      {
-        path : 'profile/:adminId',
-        component : ProfileComponent
-      },
 
       {
         path : 'addSymptom',

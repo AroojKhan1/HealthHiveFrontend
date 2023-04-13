@@ -3,13 +3,13 @@ export class SymptomJournal{
   symptom_date:Date;
   time:Date;
   symptoms:string;
-  userId:number;
+  user:number;
   constructor(
     id:number,
   symptom_date:Date,
   time:Date,
   symptoms:string,
-  userId:number,
+  user:number,
   ){}
 
 }

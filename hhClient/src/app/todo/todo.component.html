@@ -1,8 +1,23 @@
 <!DOCTYPE html>
 
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your Todo List</title>
+
+</head>
+<style>
+  .centered-table {
+    margin: 0 auto;
+  }
+</style>
+
+<body>
+<h1>Your Todo List</h1>
+<br>
 <div class="container">
   <div class="container">
-    <div class="row col-md-6 col-md-offset-2 custyle">
+    <div class="row col-md-6 col-md-offset-2 custyle centered-table">
       <table class="table table-striped custab">
         <thead>
 
@@ -16,17 +31,17 @@
         </tr>
         </thead>
         <tbody>
-        <tr *ngFor="let todo of todos">
+        <tr *ngFor="let todo of todos"  [class.completed]="isTaskCompleted(todo)" >
 
           <td>{{todo.id}}</td>
           <td>{{todo.item}}</td>
-<!--          <td>{{todo.completed}}</td>-->
-          <td>
-            <input type="checkbox" [(ngModel)]="todo.completed" (change)="toggleTask(todo)">
-          </td>
-          <td>{{todo.user_id}}</td>
 
-          <!--            <td class="text-center"><button class="btn btn-danger btn-xs" (click)="delteUser(user.id_user)"><span class="glyphicon glyphicon-remove"></span> Delete</button></td>-->
+          <td>
+            <input type="checkbox" [(ngModel)]="todo.completed" (change)="toggleTask(todo) ">
+          </td>
+          <td>{{todo.user}}</td>
+
+
         </tr>
         </tbody>
       </table>
@@ -34,20 +49,30 @@
   </div>
 </div>
 <div>
+  <br>
+  <br>
 <form>
   <fieldset>
 
     <div class="form-group">
-      <label for="item"><span class="req">* </span> todo item: </label>
-      <input required type="text" [(ngModel)]="newTask.item" name="item" id="item"
-             class="form-control" maxlength="28" placeholder="add a todo..."  />
+      <label for="item"><span class="req"> </span> Add Task: </label>
+      <br>
 
+      <input required type="text" [(ngModel)]="newTask.item" name="item" id="item"
+             class="form-control " maxlength="28" placeholder="Complete CPSC410 Project..."
+             />
+
+      <br>
       <input class="btn btn-success" type="submit" (click)="addTask(newTask.item)">
     </div>
 
   </fieldset>
 </form>
+
+  <br>
   <div style="text-align: center">
-    <h1><strong>{{message}}</strong></h1>
+    <p>{{message}}</p>
+
   </div>
 </div>
+</body>

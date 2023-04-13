@@ -14,7 +14,11 @@ export class HomeComponent implements OnInit {
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
+
+    console.log("home route",this.route);
     this.userId = this.route.snapshot.params['id'];
+
+    console.log("home id:", this.userId);
   }
 
 }
