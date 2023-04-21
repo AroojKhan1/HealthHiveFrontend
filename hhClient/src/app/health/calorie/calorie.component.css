@@ -41,6 +41,11 @@ textarea {
   margin-left: 10px; /* adjust the value to increase or decrease the space */
 
 }
+th{
+  background-color: #d3eeb8;
+  padding: 12px 15px;
+  text-align: center;
+}
 
 /*.gif-background {*/
 /*  background: url("../../../assets/imgs/calorieBg.gif") no-repeat center center fixed;*/

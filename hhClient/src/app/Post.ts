@@ -3,7 +3,7 @@ export class Post{
   content:string;
   post_date:Date;
   title:string;
-  reply_id:number;
+  reply_content:string;
   user_id:number
   time:Date;
 
@@ -13,7 +13,7 @@ export class Post{
   content:string,
   post_date:Date ,
   title:string,
-  reply_id:number,
+    reply_content:string,
   user_id:number,
   time:Date
 

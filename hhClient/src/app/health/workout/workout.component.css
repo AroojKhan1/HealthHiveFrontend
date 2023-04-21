@@ -23,6 +23,11 @@ h1{
 p{
   text-align: center;
 }
+th{
+  background-color: #d3eeb8;
+  padding: 12px 15px;
+  text-align: center;
+}
 
 form{
   text-align: center;

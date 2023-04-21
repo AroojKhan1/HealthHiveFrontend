@@ -1,1 +1,76 @@
-works
+
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>Community Forum</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-FnC/Y8nHYMm6UoT6TzMy1XJ8/8WlD+BSrNaJj+PZO95QwnGc3qzqbBLITgNf9z9l0f6JtrOfs+Z/u2dIgjUW8g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+
+  </style>
+</head>
+<body>
+
+<style>
+  .centered-table {
+    margin: 0 auto;
+  }
+</style>
+
+<h1>Connect to the hive community</h1>
+
+
+<p class="small-text">Connect to the Health Hive community and discover
+  a supportive space where you can discuss your health and wellness journey
+  with like-minded individuals. Our community is filled with passionate and
+  knowledgeable individuals who are ready to share their experiences and offer
+  advice. Whether you're looking to lose weight, manage a chronic condition,
+  or just stay healthy, the Health Hive community is here to help.
+  Join us today and start connecting with others who share your interests and goals!</p>
+
+
+  <form>
+    <div class="form-group">
+      <label for="postTitle">Post Title</label>
+      <input type="text" class="form-control" id="postTitle" [(ngModel)]="post.title" name="title">
+    </div>
+    <div class="form-group">
+      <label for="postContent">Post Content</label>
+      <textarea class="form-control" id="postContent" rows="5" [(ngModel)]="post.content" name="content"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="addNowPost()">Submit Post</button>
+  </form>
+
+  <hr>
+
+<br>
+  <div *ngFor="let post of posts; let i=index">
+    <h3>{{ post.title }}</h3>
+    <p>{{ post.content }}</p>
+    <p>on {{ post.post_date | date:'dd/MM/yyyy' }} at {{post.time.toString().split(',').join(':')}}</p>
+    <hr>
+    <h4>Replies:</h4>
+    <form>
+      <div class="form-group">
+        <label for="replyContent">Reply:</label>
+        <textarea class="form-control" id="replyContent_{{post.id}}" rows="1" cols="2" [(ngModel)]="replyModel[i]" name="content_{{post.id}}"></textarea>
+      </div>
+      <button type="submit" class="btn btn-secondary" (click)="addNowReply(post.id, replyModel[i])">Submit Reply</button>
+    </form>
+
+    <div *ngFor="let reply of post.reply_id">
+      <p>{{ reply.content }}</p>
+      <p><strong>Replied By:</strong> {{ reply.user_id }} on {{ reply.reply_date | date:'dd/MM/yyyy' }}</p>
+    </div>
+
+
+
+  <div style="text-align: center">
+    <h1><strong>{{message}}</strong></h1>
+  </div>
+</div>
+
+
+
+</body>
+</html>

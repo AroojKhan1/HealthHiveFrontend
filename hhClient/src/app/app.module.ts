@@ -32,6 +32,7 @@ import {WorkoutService} from "./workout.service";
 import { DoctorHomeComponent } from './doctor-home/doctor-home.component';
 import {ForumComponent} from "./forum/forum.component";
 import {ForumService} from "./forum.service";
+import { ForumThreadComponent } from './forum-thread/forum-thread.component';
 
 
 @NgModule({
@@ -50,7 +51,8 @@ import {ForumService} from "./forum.service";
     CalorieComponent,
     AskDrComponent,
     DoctorHomeComponent,
-    ForumComponent
+    ForumComponent,
+    ForumThreadComponent
 
 
 
@@ -115,8 +117,11 @@ import {ForumService} from "./forum.service";
       {
         path : 'forum',
         component : ForumComponent
+      },
+      {
+        path : 'forum-thread',
+        component : ForumThreadComponent
       }
-
 
 
 

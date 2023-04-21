@@ -5,7 +5,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 import {User} from "./user";
 import {Router} from "@angular/router";
 
-
+import { map } from 'rxjs/operators';
 
 const headers = new HttpHeaders({
   'Content-Type': 'application/json'
@@ -41,6 +41,14 @@ export class AdminService {
       responseType: "json"});
     // return this.http.post("http://localhost:8080/login",adminDetail,{responseType:'text' as 'json'})
   }
+  // public findUserbyid(id:number){
+  //   console.log("in find id frnt");
+  //   return this.http.get(`http://localhost:8080/findUserbyid/${id}`);
+  // }
+
+
+
+
 
   logout()
   {

@@ -5,6 +5,7 @@ export class Reply{
   reply_date:Date;
   time:Date;
   user_id:number;
+  post_id:number;
 
 
 
@@ -14,7 +15,7 @@ export class Reply{
   reply_date:Date,
   time:Date,
   user_id:number,
-
+    post_id:number,
   ){}
 
 }

@@ -12,6 +12,8 @@ export class ForumService {
   constructor(private http:HttpClient) { }
 
   public addPost(post:Post, userId:number){
+    console.log("inside add post");
+
     return this.http.post(`http://localhost:8080/forum/${userId}`,
       post,{responseType:'text' as 'json'})
   }

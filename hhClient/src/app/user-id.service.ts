@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
+import {HttpClient} from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserIdService {
+  constructor(private http:HttpClient) { }
 
   private _userId: string;
   private _currentUser: any;
@@ -19,6 +21,9 @@ export class UserIdService {
   get currentUser(): any {
     return this._currentUser;
   }
+
+
+
 
   set currentUser(user: any) {
     this._currentUser = user;
