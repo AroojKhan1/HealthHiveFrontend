@@ -10,7 +10,7 @@ import {Calorie} from "../../Calorie";
 export class CalorieComponent {
   constructor(private service:CalorieService) {
   }
-  calorie =new Calorie(0,"",0,new Date(),0);
+  calorie =new Calorie(0,"",0,new Date(),"",0);
   clr:any;
   message:any;
   userId:number;

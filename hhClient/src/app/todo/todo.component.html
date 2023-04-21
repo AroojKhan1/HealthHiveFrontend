@@ -4,7 +4,13 @@
 <head>
   <meta charset="UTF-8">
   <title>Your Todo List</title>
-
+  <style>
+    body {
+      background-image: url("../../assets/imgs/todoBg.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  </style>
 </head>
 <style>
   .centered-table {
@@ -13,8 +19,8 @@
 </style>
 
 <body>
-<h1>Your Todo List</h1>
-<br>
+<!--<img src="../../assets/imgs/todoBg.png" alt="logo">-->
+
 <div class="container">
   <div class="container">
     <div class="row col-md-6 col-md-offset-2 custyle centered-table">
@@ -22,10 +28,10 @@
         <thead>
 
         <tr>
-          <th>Id</th>
+<!--          <th>Id</th>-->
           <th>Task</th>
           <th>Completed</th>
-          <th>UserId</th>
+<!--          <th>UserId</th>-->
 
 
         </tr>
@@ -33,13 +39,13 @@
         <tbody>
         <tr *ngFor="let todo of todos"  [class.completed]="isTaskCompleted(todo)" >
 
-          <td>{{todo.id}}</td>
+<!--          <td>{{todo.id}}</td>-->
           <td>{{todo.item}}</td>
 
           <td>
             <input type="checkbox" [(ngModel)]="todo.completed" (change)="toggleTask(todo) ">
           </td>
-          <td>{{todo.user}}</td>
+<!--          <td>{{todo.user}}</td>-->
 
 
         </tr>

@@ -42,11 +42,26 @@ textarea {
 
 }
 
-
+/*.gif-background {*/
+/*  background: url("../../../assets/imgs/calorieBg.gif") no-repeat center center fixed;*/
+/*  -webkit-background-size: cover;*/
+/*  -moz-background-size: cover;*/
+/*  -o-background-size: cover;*/
+/*  background-size: cover;*/
+/*  position: fixed;*/
+/*  top: 0;*/
+/*  left: 0;*/
+/*  width: 100%;*/
+/*  height: 100%;*/
+/*  z-index: -1;*/
+/*}*/
 body {
-  background: linear-gradient(to bottom, #f1f1f1 0%, #D3C3E3 100%) !important;
+  background: linear-gradient(to bottom, #f1f1f1 0%, #D3C3E3 100%)!important; ;
   animation: gradient 10s ease infinite;
+
+
 }
+
 
 @keyframes gradient {
   0% {

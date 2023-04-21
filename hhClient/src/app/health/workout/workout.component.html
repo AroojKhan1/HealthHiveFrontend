@@ -18,6 +18,7 @@
 
 <h1>Record your daily workouts</h1>
 
+
 <p class="small-text">Track your workouts</p>
 
 <form action="/workout" method="get">
@@ -33,7 +34,7 @@
   <table class="table table-striped custab">
     <thead>
     <tr>
-      <th>Id</th>
+<!--      <th>Id</th>-->
       <th>Calories</th>
       <th>Date</th>
       <th>name</th>
@@ -44,7 +45,7 @@
     <tbody>
     <tr *ngFor="let workouts of wkt">
 
-      <td>{{workouts.id}}</td>
+<!--      <td>{{workouts.id}}</td>-->
       <td>{{workouts.cal_burnt}}</td>
       <td>{{workouts.w_date | date:'yyyy/MM/dd'}}</td>
       <td>{{ workouts.w_name}}</td>
@@ -69,7 +70,7 @@
     </div>
 
     <div class="form-group">
-      <label for="cal_burnt"><span class="req"></span> cal_burnt: </label>
+      <label for="cal_burnt"><span class="req"></span> Calories Burnt: </label>
       <input required type="text" [(ngModel)]="workout.cal_burnt" name="cal_burnt" id="cal_burnt"
              class="form-control" maxlength="28" placeholder="300.."  />
     </div>
@@ -82,7 +83,7 @@
     <br>
     <div class="form-group">
       <input class="btn btn-success" type="submit" name="submit_wtr"
-             value="record meal" (click)="addWorkout()">
+             value="record workout" (click)="addWorkout()">
     </div>
   </form>
   <br>

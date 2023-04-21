@@ -27,6 +27,9 @@ h1{
 p{
   text-align: center;
 }
+h1{
+  color: black;
+}
 
 form{
   text-align: center;
@@ -55,19 +58,19 @@ textarea {
 
 }
 
-body {
-  background: linear-gradient(to bottom, #f1f1f1 0%, #D3C3E3 100%) !important;
-  animation: gradient 10s ease infinite !important;
-}
+/*body {*/
+/*  background: linear-gradient(to bottom, #f1f1f1 0%, #D3C3E3 100%) !important;*/
+/*  animation: gradient 10s ease infinite !important;*/
+/*}*/
 
-@keyframes gradient {
-  0% {
-    background-position: 0% 0%;
-  }
-  50% {
-    background-position: 100% 100%;
-  }
-  100% {
-    background-position: 0% 0%;
-  }
-}
+/*@keyframes gradient {*/
+/*  0% {*/
+/*    background-position: 0% 0%;*/
+/*  }*/
+/*  50% {*/
+/*    background-position: 100% 100%;*/
+/*  }*/
+/*  100% {*/
+/*    background-position: 0% 0%;*/
+/*  }*/
+/*}*/

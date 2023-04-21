@@ -4,8 +4,9 @@
 <head>
   <title>Water Intake</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-FnC/Y8nHYMm6UoT6TzMy1XJ8/8WlD+BSrNaJj+PZO95QwnGc3qzqbBLITgNf9z9l0f6JtrOfs+Z/u2dIgjUW8g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
 
-
+  </style>
 </head>
 <body>
 
@@ -33,18 +34,21 @@
   <table class="table table-striped custab">
     <thead>
     <tr>
-      <th>Id</th>
+<!--      <th>Id</th>-->
       <th>Meal Type</th>
+      <th>Meal Name</th>
       <th>Calories</th>
       <th>Date</th>
+
 
     </tr>
     </thead>
     <tbody>
     <tr *ngFor="let calories of clr">
 
-      <td>{{calories.id}}</td>
+<!--      <td>{{calories.id}}</td>-->
       <td>{{calories.meal_typ}}</td>
+      <td>{{calories.meal_name}}</td>
       <td>{{ calories.calorie}}</td>
       <td>{{calories.meal_date | date:'yyyy/MM/dd'}}</td>
 
@@ -69,6 +73,12 @@
         <option value="Dinner">Dinner</option>
         <option value="Snack">Snack</option>
       </select>
+    </div>
+
+    <div class="form-group">
+      <label for="calIntk"><span class="req"></span> Food: </label>
+      <input required type="text" [(ngModel)]="calorie.meal_name" name="calIntk" id="calIntk"
+             class="form-control" maxlength="28" placeholder="Burger.."  />
     </div>
 
     <div class="form-group">
