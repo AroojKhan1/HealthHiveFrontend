@@ -16,7 +16,7 @@ import { TodoComponent } from './todo/todo.component';
 import { SymptomsComponent } from './symptoms/symptoms.component';
 import { HealthComponent } from './health/health.component';
 import { AskDrComponent } from './ask-dr/ask-dr.component';
-import { ForumComponent } from './forum/forum.component';
+
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
 import { SignupComponent } from './signup/signup.component';
@@ -30,6 +30,9 @@ import {WaterService} from "./water.service";
 import {CalorieService} from "./calorie.service";
 import {WorkoutService} from "./workout.service";
 import { DoctorHomeComponent } from './doctor-home/doctor-home.component';
+import {ForumComponent} from "./forum/forum.component";
+import {ForumService} from "./forum.service";
+
 
 @NgModule({
   declarations: [
@@ -47,7 +50,9 @@ import { DoctorHomeComponent } from './doctor-home/doctor-home.component';
     CalorieComponent,
     AskDrComponent,
     DoctorHomeComponent,
-    // ForumComponent,
+    ForumComponent
+
+
 
   ],
   imports: [
@@ -106,7 +111,12 @@ import { DoctorHomeComponent } from './doctor-home/doctor-home.component';
       {
         path : 'drHome',
         component : DoctorHomeComponent
+      },
+      {
+        path : 'forum',
+        component : ForumComponent
       }
+
 
 
 
@@ -114,7 +124,8 @@ import { DoctorHomeComponent } from './doctor-home/doctor-home.component';
 
 
 ],
-  providers: [UserRegistrationService, AdminService,UserIdService,SymptomService,WaterService,CalorieService, WorkoutService],
+  providers: [UserRegistrationService, AdminService,UserIdService,SymptomService,
+    WaterService,CalorieService, WorkoutService,ForumService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
