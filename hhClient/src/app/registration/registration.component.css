@@ -55,12 +55,11 @@ img{
   --secondary-color: #BDB3E0;
   --background-color: #D3C3E3;
 }
-body {
-  background-color: var(--background-color);
-}
+
 
 h1, h2, h3 {
-  color: var(--primary-color);
+  color: #678;
+  text-align: center;
 }
 
 button {

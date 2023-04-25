@@ -1,18 +1,13 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<!--<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">-->
 <!--<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>-->
 <!--<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>-->
 
 
 <html>
 
-<div style="text-align: center">
-  <h1><strong>{{message}}</strong></h1>
-</div>
-
 
 <head>
   <title>Registration Form</title>
-
 
 </head>
 
@@ -20,7 +15,13 @@
 
 <body>
 
+
+
 <h1><strong>Register Now!</strong></h1>
+
+<div style="text-align: center">
+  <h1><strong>{{message}}</strong></h1>
+</div>
 
 <div>
   <img src="../../assets/imgs/logo-no-background.png" alt="logo">
@@ -35,25 +36,40 @@
           <div class="form-group">
             <label for="username"><span class="req">* </span> Username: </label>
             <input required type="text" [(ngModel)]="user.user_name" name="username" id="username"
-                   class="form-control" maxlength="28" placeholder="Must be unique..."  />
+                   class="form-control" maxlength="28" placeholder="pick a username..."  />
+
+            <div *ngIf="user.user_name.length <=5" class="alert alert-danger">Too short.</div>
+            <div *ngIf="user.user_name.length >=28" class="alert alert-danger">Too long.</div>
           </div>
 
           <div class="form-group">
             <label for="firstname">First Name: </label>
             <input required type="text" [(ngModel)]="user.first_name" name="firstname" id="firstname"
                    class="form-control" maxlength="28" placeholder="Enter your first name..." />
+
+            <div *ngIf="user.first_name.length <=2" class="alert alert-danger">Too short.</div>
+            <div *ngIf="user.first_name.length >=28" class="alert alert-danger">Too long.</div>
           </div>
           <div class="form-group">
             <label for="lastname">Last Name: </label>
             <input  type="text" [(ngModel)]="user.last_name" name="lastname" id="lastname"
                    class="form-control" maxlength="28" placeholder="Enter your last name..." />
+            <div *ngIf="user.last_name.length <=2" class="alert alert-danger">Too short.</div>
+            <div *ngIf="user.last_name.length >=28" class="alert alert-danger">Too long.</div>
           </div>
+
 
 
           <div class="form-group">
             <label for="email"><span class="req">* </span> Email: </label>
             <input required type="email" [(ngModel)]="user.email" name="email" id="email"
                    class="form-control" placeholder="Enter a *valid email..." />
+
+            <div *ngIf="!emailIsValid()">
+              <div class="alert alert-danger">
+                The email address is not valid.
+              </div>
+
           </div>
 
           <div class="form-group">
@@ -73,6 +89,8 @@
             <label for="age"><span class="req">* </span> Age: </label>
             <input required type="number" [(ngModel)]="user.age" name="age" id="age"
                    class="form-control" placeholder="Must be older than 18..." />
+            <div *ngIf="user.age <=18" class="alert alert-danger">Too young.</div>
+
           </div>
           <div class="form-group">
             <label for="role"><span class="req">* </span> Role: </label>
@@ -96,16 +114,21 @@
           </div>
 
           <div class="form-group">
-            <input class="btn btn-success" type="submit" [disabled]="confirmPassword !== user.password" name="submit_reg"
+            <input class="btn btn-success" type="submit" [disabled]="confirmPassword !== user.password
+            || user.password.length < 8 || user.password.length > 20" name="submit_reg"
                    value="Register" (click)="registerNow()" [disabled]="!canRegister" (click)="toggleIsRegistered()"Toggle isRegistered>
           </div>
-
+          </div>
 
         </fieldset>
       </form>
     </div>
   </div>
 </div>
+
+
+
+
 
 <div *ngIf="isRegistered" align="center">
   <h3><b>Already have an account? Click <a href="/login">here</a> to login.</b></h3>
