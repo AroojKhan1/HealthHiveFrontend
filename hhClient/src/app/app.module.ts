@@ -82,6 +82,10 @@ import { ForumThreadComponent } from './forum-thread/forum-thread.component';
         component : SymptomsComponent
       },
       {
+        path : 'symptom',
+        component : SymptomsComponent
+      },
+      {
         path : 'health',
         component : HealthComponent
       },

@@ -53,6 +53,9 @@ export class RegistrationComponent implements OnInit {
       alert("Password must be between 8 and 20 characters.");
       return;
     }
+
+
+
     let resp=this.service.doRegistration(this.user);
     resp.subscribe((data)=>this.message=data);
   }

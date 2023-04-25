@@ -24,6 +24,7 @@ const routes: Routes = [
   {path:"home/:id",component: HomeComponent},
   { path: "yourTodos", component: TodoComponent },
   { path: 'addSymptom', component: SymptomsComponent },
+  { path: 'symptom', component: SymptomsComponent },
   { path: 'symptoms', component: SymptomsComponent },
   { path: 'health', component: HealthComponent },
   { path: 'water', component: WaterComponent },

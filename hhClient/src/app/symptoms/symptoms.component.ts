@@ -46,4 +46,15 @@ export class SymptomsComponent implements OnInit{
   }
 
 
+  public getSympOnDate(){
+    console.log(this.symptom.symptom_date.toLocaleString(""));
+    const id = localStorage.getItem('id');
+    this.userId = id? +id : 0;
+    console.log("user id wktbydt:",this.userId);
+    console.log(this.symptom.symptom_date.toLocaleString(""));
+
+    let resp = this.service.getSymptomOnDay(this.symptom.symptom_date.toLocaleString(""),this.userId);
+    resp.subscribe((data)=>this.symptoms=data)
+  }
+
 }

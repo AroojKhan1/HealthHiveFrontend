@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {ToDo} from "./ToDo";
+import {Calorie} from "./Calorie";
 
 
 class SymptomJournal {
@@ -21,5 +22,12 @@ export class SymptomService {
 
   public getSymp(userId:number):Observable<SymptomJournal[]>{
     return this.http.get<SymptomJournal[]>(`http://localhost:8080/symptoms/${userId}`);
+  }
+
+  public getSymptomOnDay(calorie_date:String,userId:number):Observable<SymptomJournal[]>{
+
+    console.log("calorie date : ",calorie_date)
+
+    return this.http.get<Calorie[]>(`http://localhost:8080/symptom/${userId}?date=${calorie_date}`);
   }
 }

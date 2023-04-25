@@ -12,15 +12,25 @@
 </style>
 <h1>Symptom Journal</h1>
 <p class="small-text">Track your symptoms</p>
+
+<form action="/symptom" method="get">
+  <!--  <input type="text" name="q" placeholder="Search...">-->
+
+  <input required type="text" [(ngModel)]="symptom.symptom_date" name="date" id="date"
+         maxlength="28" placeholder="search (yyyy-mm-dd).."  />
+  <input class="btn btn-success" type="submit" name="submit_wtr"
+         value="search" (click)="getSympOnDate()">
+</form>
+
 <div class="row col-md-6 col-md-offset-2 custyle centered-table">
   <table class="table table-striped custab">
     <thead>
 
     <tr>
-      <th>Id</th>
+<!--      <th>Id</th>-->
       <th>Symptom</th>
-      <th>date</th>
-      <th>time</th>
+      <th>Date</th>
+      <th>Time</th>
 
 
     </tr>
@@ -28,9 +38,9 @@
     <tbody>
     <tr *ngFor="let symptom of symptoms">
 
-      <td>{{symptom.id}}</td>
+<!--      <td>{{symptom.id}}</td>-->
       <td>{{symptom.symptoms}}</td>
-      <td>{{symptom.symptom_date |  date:'dd/MM/yyyy'}}</td>
+      <td>{{symptom.symptom_date |  date:'yyyy/MM/dd'}}</td>
       <td>{{symptom.time.toString().split(',').join(':')}}</td>
 
       <!--            <td class="text-center"><button class="btn btn-danger btn-xs" (click)="delteUser(user.id_user)"><span class="glyphicon glyphicon-remove"></span> Delete</button></td>-->
