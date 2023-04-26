@@ -23,6 +23,7 @@ export class ForumComponent implements OnInit {
   userId:number;
   posts:any;
   replies:any;
+  selectedPostId: number;
 
   async ngOnInit() {
 
@@ -30,11 +31,18 @@ export class ForumComponent implements OnInit {
     await resp.subscribe((data)=>this.posts=data);
 
 
-    // this.replyModel = new Array(this.posts.length).fill('');
-
 
   }
+  public async getReplies(post: any){
+    try {
+      const response = await this.service.getAllReplies(post.id).toPromise();
+      this.replies = response;
+      this.selectedPostId = post.id;
+    } catch (error) {
+      console.error(error);
+    }
 
+  }
 
   public addNowPost(){
     console.log("we r in component.ts");
@@ -50,11 +58,6 @@ export class ForumComponent implements OnInit {
 
 
 
-  // public getusername(id:number){
-  //   let resps=this.uService.findUserbyid(this.post.user_id);
-  //   resps.subscribe((data)=>this.message=data);
-  // }
-  //
   public addNowReply(postId:number, replyModel:any){
 
     const id = localStorage.getItem('id');
@@ -68,32 +71,7 @@ export class ForumComponent implements OnInit {
 
   }
 
-  // public addNowReply(postId: number, content: string) {
-  //
-  //   //   const id = localStorage.getItem('id');
-  //   //   this.reply.user_id = id? +id : 0;
-  //   //   console.log("userId" ,this.reply.user_id);
-  //   //   console.log("postId" ,postId);
-  //   //   let resp=this.service.addReplyToPost(postId,this.reply.user_id,this.reply);
-  //   //   resp.subscribe((data)=>this.message=data);
-  //   // }
-  //   const id = localStorage.getItem('id');
-  //   const reply: Reply = {
-  //     user_id: id ? +id : 0,
-  //     content: content,
-  //     id: 0,
-  //     reply_date: new Date(),
-  //     time: new Date(),
-  //     post_id: postId
-  //   };
-  //   console.log("userId", reply.user_id);
-  //   console.log("postId", postId);
-  //   let resp = this.service.addReplyToPost(postId, reply.user_id, reply);
-  //   resp.subscribe((data) => this.message = data);
-  //   this.reply = new Reply(0, "", new Date(), new Date(), 0, 0);
-  //
-  // }
-  //
+
 
 
 }

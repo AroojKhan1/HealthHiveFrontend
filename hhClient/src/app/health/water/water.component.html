@@ -43,8 +43,9 @@
   <textarea id = glasses name ="glasses" [(ngModel)]="water.num_glasses"
             class="form-control" placeholder="Enter num glasses here"
             style="height: 30%; width: 30%;"></textarea>
+    <br>
     <div class="form-group">
-      <input class="btn btn-success" type="submit" name="submit_wtr"
+      <input class="btn btn-success" type="submit" [disabled]="!water.num_glasses" name="submit_wtr"
              value="record glass(es)" (click)="addWater()">
     </div>
   </form>

@@ -19,7 +19,7 @@ import { AskDrComponent } from './ask-dr/ask-dr.component';
 
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
-import { SignupComponent } from './signup/signup.component';
+
 import {AdminService} from "./admin.service";
 import {UserIdService} from "./user-id.service";
 import {SymptomService} from "./symptom.service";
@@ -32,7 +32,7 @@ import {WorkoutService} from "./workout.service";
 import { DoctorHomeComponent } from './doctor-home/doctor-home.component';
 import {ForumComponent} from "./forum/forum.component";
 import {ForumService} from "./forum.service";
-import { ForumThreadComponent } from './forum-thread/forum-thread.component';
+
 
 
 @NgModule({
@@ -43,7 +43,7 @@ import { ForumThreadComponent } from './forum-thread/forum-thread.component';
     TodoComponent,
     LoginComponent,
     ProfileComponent,
-    SignupComponent,
+
     SymptomsComponent,
     HealthComponent,
     WaterComponent,
@@ -52,8 +52,6 @@ import { ForumThreadComponent } from './forum-thread/forum-thread.component';
     AskDrComponent,
     DoctorHomeComponent,
     ForumComponent,
-    ForumThreadComponent
-
 
 
   ],
@@ -122,10 +120,7 @@ import { ForumThreadComponent } from './forum-thread/forum-thread.component';
         path : 'forum',
         component : ForumComponent
       },
-      {
-        path : 'forum-thread',
-        component : ForumThreadComponent
-      }
+
 
 
 

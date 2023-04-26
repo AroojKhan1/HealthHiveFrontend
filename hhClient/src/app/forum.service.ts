@@ -3,6 +3,8 @@ import {HttpClient} from "@angular/common/http";
 import {Post} from "./Post";
 import {Observable} from "rxjs";
 import {Reply} from "./Reply";
+import {Calorie} from "./Calorie";
+import {ReplyResponse} from "./ReplyResponse";
 
 @Injectable({
   providedIn: 'root'
@@ -26,5 +28,10 @@ export class ForumService {
   public addReplyToPost(postId:number, userId:number, reply:Reply){
     return this.http.post(`http://localhost:8080/forum/${postId}/${userId}`,
       reply,{responseType:'text' as 'json'})
+  }
+
+
+  public getAllReplies(postId:number):Observable<ReplyResponse[]>{
+    return this.http.get<ReplyResponse[]>(`http://localhost:8080/forum/${postId}`);
   }
 }

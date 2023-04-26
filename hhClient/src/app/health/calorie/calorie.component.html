@@ -72,6 +72,8 @@
         <option value="Lunch">Lunch</option>
         <option value="Dinner">Dinner</option>
         <option value="Snack">Snack</option>
+        <option value="Beverage">Beverage</option>
+        <option value="Dessert">Dessert</option>
       </select>
     </div>
 
@@ -89,8 +91,10 @@
     <br>
     <br>
     <div class="form-group">
+
+
       <input class="btn btn-success" type="submit" name="submit_wtr"
-             value="record meal" (click)="addMeal()">
+             value="record meal" [disabled]="!calorie.meal_name || !calorie.calorie" (click)="addMeal()">
     </div>
   </form>
   <br>

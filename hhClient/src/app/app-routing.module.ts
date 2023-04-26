@@ -14,7 +14,7 @@ import {WorkoutComponent} from "./health/workout/workout.component";
 import {AskDrComponent} from "./ask-dr/ask-dr.component";
 import {DoctorHomeComponent} from "./doctor-home/doctor-home.component";
 import {ForumComponent} from "./forum/forum.component";
-import {ForumThreadComponent} from "./forum-thread/forum-thread.component";
+
 
 const routes: Routes = [
   {path:"",redirectTo:"login",pathMatch:"full"},
@@ -35,7 +35,7 @@ const routes: Routes = [
   { path: 'askDr', component: AskDrComponent },
   { path: 'drHome', component: DoctorHomeComponent},
   { path: 'forum', component: ForumComponent},
-  { path: 'forum-thread', component: ForumThreadComponent},
+
 
 
 ];

@@ -56,7 +56,7 @@
             style="height: 30%; width: 30%;"></textarea>
   <br>
   <div class="form-group">
-    <input class="btn btn-success" type="submit" name="submit_symp"
+    <input class="btn btn-success" type="submit"  [disabled]="!symptom.symptoms" name="submit_symp"
            value="record symptoms" (click)="addNow()">
   </div>
 </form>
