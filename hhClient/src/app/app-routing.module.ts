@@ -32,9 +32,10 @@ const routes: Routes = [
   { path: 'getAllcalorie', component: CalorieComponent },
   { path: 'workout', component: WorkoutComponent },
   { path: 'getAllworkouts', component: WorkoutComponent },
-  { path: 'askDr', component: AskDrComponent },
+  { path: 'askDr/:id', component: AskDrComponent },
   { path: 'drHome', component: DoctorHomeComponent},
   { path: 'forum', component: ForumComponent},
+
 
 
 

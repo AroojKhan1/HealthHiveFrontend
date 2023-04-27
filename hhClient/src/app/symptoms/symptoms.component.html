@@ -14,7 +14,6 @@
 <p class="small-text">Track your symptoms</p>
 
 <form action="/symptom" method="get">
-  <!--  <input type="text" name="q" placeholder="Search...">-->
 
   <input required type="text" [(ngModel)]="symptom.symptom_date" name="date" id="date"
          maxlength="28" placeholder="search (yyyy-mm-dd).."  />
@@ -50,9 +49,10 @@
 </div>
 <br>
 <div class="container">
-<form>
+<p>How are you feeling today?</p>
+  <form>
   <textarea id = symptoms name ="symptoms" [(ngModel)]="symptom.symptoms"
-            class="form-control" placeholder="Enter your symptoms here"
+            class="form-control" placeholder=" Record your symptoms here"
             style="height: 30%; width: 30%;"></textarea>
   <br>
   <div class="form-group">

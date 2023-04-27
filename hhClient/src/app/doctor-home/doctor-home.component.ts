@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {ChatService} from "../chat.service";
+import {User} from "../user";
 
 @Component({
   selector: 'app-doctor-home',
