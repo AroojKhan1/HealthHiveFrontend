@@ -39,6 +39,7 @@ export class LoginComponent implements OnInit {
     this.adminDetail.email = this.Email?.value ?? '';
     this.adminDetail.password = this.Password?.value ?? '';
 
+
     this.adminService.login(this.adminDetail).subscribe(
       response  => {
 
@@ -48,14 +49,7 @@ export class LoginComponent implements OnInit {
 
         if(result > 0)
         {
-          // console.log("res keys", response.headers.keys());
-          // let token = response.headers.keys().forEach((keyName: any) =>
-          //   console.log(
-          //     `The value of the ${keyName} header is: ${response.headers.get(
-          //       keyName
-          //     )}`
-          //   )
-          // );;
+
           const header = response.headers.get("Authorization");
           const token = header? header.toString() : '';
 
@@ -64,11 +58,14 @@ export class LoginComponent implements OnInit {
           localStorage.setItem("id" , result.toString());
           console.log("token",token);
           this.userIdService.currentUser = this.adminDetail;
+          // if(this.adminDetail.role)
+          console.log("ROLE from login:", this.adminDetail.role);
           this.router.navigate(['/home', result]);
         }
         if(result == -1)
         {
-          alert("please register before login Or Invalid combination of Email and password");
+          alert("Your email and password do not match. Please ensure that you have entered the " +
+            "correct information or register if you don't have an account.");
         }
 
       },
@@ -85,5 +82,6 @@ export class LoginComponent implements OnInit {
   get Password(){
     return this.form.get('password');
   }
+
 
 }

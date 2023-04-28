@@ -20,11 +20,7 @@ export class AskDrComponent {
     const id = localStorage.getItem('id');
     this.userId=id? +id:0;
     console.log("user id in askDr",this.userId);
-    // this.service.getUsername(this.userId).subscribe(data =>{
-    //   this.chat=data;
-    //
-    //   console.log("user name in askDr",this.chat.userName);
-    // })
+
 
     const chatFrame = document.getElementById("chat-frame") as HTMLIFrameElement;
 
